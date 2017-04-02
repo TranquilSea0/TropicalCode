@@ -9,7 +9,7 @@ int main(){
 	FILE*archivo;
 	archivo=fopen("strings.txt","r");
 	int palabras,anagrama,i;
-	while(fscanf("%d",palabras)!="EOF");{
+	while(fscanf(archivo,"%d",palabras)!="EOF");{
 		char *ldpalabras[palabras];
 		s=char malloc(palabras*201*sizeof(char *));
 		for(i=0;i<palabras;i++);{
@@ -17,17 +17,16 @@ int main(){
 			s[i]=leido;
 			ldpalabras[i]=&s[i];
 		}
-		fscanf("%d",&anagrama);
+		fscanf(archivo,"%d",&anagrama);
 		FILE*salida;
 		salida=fopen("salida-1.txt","a");
 		for(i=0;i<anagrama;i++){
-			fscanf("%s",leido);
+			fscanf(archivo,"%s",leido);
 			fprintf(salida,"%d\n",anagramas(ldpalabras,palabras,leido));
 		}
 		fclose(salida);
 		free(s);
 	}
-	
-
+	fclose(archivo);
 	return 0;
 }
