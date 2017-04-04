@@ -1,32 +1,40 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-void error(char mensaje[]){
-		printf("Ocurrio un error al %s\n",mensaje); """ esta wea es pa probar algo (:"""
-int anagramas(char **S,int n,char *str){
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void error(char n[]){
+	printf("%s",n);
+	exit(1)
+}
+void cambio(char *palabra){
+	int i=0;
+	while(palabra[i] !="\0"){
+		if((65<=palabra[i]) && (palabra[i]<95)){
+			palabra[i]+=32;
+		}
+		if else(()){
+
+		}
+		i++;
+	}
+}
+char **array(FILE *texto){
+    char **array_p,*tropical;
+    int numero,i,j;
+    fscanf(texto,"%d",&numero);
+    array_p=(char **)malloc(sizeof(char*)*numero);
+    for(i=0;i<numero;i++){
+        array_p[i]=(char *) malloc(sizeof(char)*201);
+        fscanf(texto,"%s",array_p[i]);
+        cambio(array_p[i]);
+    }
+    tropical=array_p[0];
+    for(i=0;i<numero;i++){
+        printf("%s\n",array_p[i]);
+    }
+    return array_p;
 }
 int main(){
-	FILE*archivo;
-	archivo=fopen("strings.txt","r");
-	int palabras,anagrama,i;
-	while(fscanf(archivo,"%d",palabras)!="EOF");{
-		char *ldpalabras[palabras];
-		s=char malloc(palabras*201*sizeof(char *));
-		for(i=0;i<palabras;i++);{
-			char leido[201];fscanf("%s",leido);
-			s[i]=leido;
-			ldpalabras[i]=&s[i];
-		}
-		fscanf(archivo,"%d",&anagrama);
-		FILE*salida;
-		salida=fopen("salida-1.txt","a");
-		for(i=0;i<anagrama;i++){
-			fscanf(archivo,"%s",leido);
-			fprintf(salida,"%d\n",anagramas(ldpalabras,palabras,leido));
-		}
-		fclose(salida);
-		free(s);
-	}
-	fclose(archivo);
+
+}
 	return 0;
 }
