@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+//jdhksajdhkajdshak
 void sort(char* inputString, char* outputArray){
     int counterArray[256] ={0}, length, counter, index;
     length = strlen(inputString);
